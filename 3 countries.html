@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <style>
+    #main {
+      border: 1px solid #e5e5e5;
+      width: 30%;
+      margin-left: 35%;
+      margin-top: 200px;
+    }
+
+    select {
+      font-size: 14px;
+      border: none;
+      width: 100%;
+      background-color: aqua;
+      padding: 10px;
+      font-size: 20px;
+      font-weight: 900;
+      font-family: "Lucida Console", "Courier New", monospace;
+      color: green;
+      transition: .4s ease-out;
+    }
+
+    select:hover {
+      background-color: aqua;
+      padding: 10px;
+      color: red;
+    }
+
+    #f1 {
+      color: red;
+      font-size: 18px;
+      padding: 20px;
+      padding-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <select id=s1 onchange=f1.innerText=this.value>
+      <option value="-1">select country</option>
+      <option value="Delhi">India</option>
+      <option value="Washington, D.C.">USA</option>
+      <option value="London">England</option>
+      <option value="Canberra">Australia</option>
+      <option value="Ismaabad">Pakistan</option>
+    </select>
+    <div id=f1></div>
+  </div>
+</body>
+
+</html>

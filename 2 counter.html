@@ -1,0 +1,45 @@
+<html>
+
+<head>
+	<style>
+		* {
+			padding: 10px;
+			margin: 20px;
+		}
+
+		table,
+		td {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<center><textarea id="i1"></textarea>
+		<br />
+		<input type="button" value="submit" onclick="GetCWL(i1.value)">
+		<input type="reset" value="Reset">
+	</center>
+	<script>
+		function GetCWL(x) {
+			var w = 0, l = 1;
+			x = x.trim();
+			if (x.length == 0) {
+				alert("chars:0\nWords:0\nLines:0");
+			}
+			var data = x.split("\n");
+			for (var i = 0; i < data.length; i++) {
+				var temp = data[i].split(" ");
+				if (temp.length > 0)
+					w += temp.length;
+			}
+			if (data.length > 1)
+				var c = x.length - l;
+			else
+				var c = x.length;
+			alert("chars:" + c + "\nWords:" + w + "\nLines:" + data.length);
+		}
+	</script>
+</body>
+
+</html>

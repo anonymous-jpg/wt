@@ -1,0 +1,71 @@
+<html>
+
+<head>
+	<style>
+		* {
+			padding: 10px;
+			margin: 2px;
+		}
+
+		table,
+		td {
+			text-align: center;
+		}
+	</style>
+</head>
+<script language="javascript">
+	function inWords(x) {
+		if (x == "" || isNaN(x)) {
+			alert("not a valid input");
+			i1.value = '';
+			i2.value = '';
+			return;
+		}
+		if (x > 999) {
+			alert("out of range"); return;
+		}
+		if (x == 0)
+			i2.value += "Zero ";
+		if (x != 0) {
+			if (Math.floor(x / 10) != 0)
+				inWords(Math.floor(x / 10));
+			switch (x % 10) {
+				case 0: i2.value += "Zero "; break;
+				case 1: i2.value += "One "; break;
+				case 2: i2.value += "Two "; break;
+				case 3: i2.value += "Three "; break;
+				case 4: i2.value += "Four "; break;
+				case 5: i2.value += "Five "; break;
+				case 6: i2.value += "Six "; break;
+				case 7: i2.value += "Seven "; break;
+				case 8: i2.value += "Eight "; break;
+				case 9: i2.value += "Nine "; break;
+			}
+		}
+	}
+</script>
+
+<body>
+	<center>
+		<form>
+			<table>
+				<tr>
+					<td>enter number:</td>
+					<td><input type="text" id="i1"></td>
+				</tr>
+				<tr>
+					<td>in words:</td>
+					<td><input type="text" id="i2"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Submit" onclick="i2.value=''; inWords(i1.value);"></td>
+					<td>
+						<input type="reset" value="Reset">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</center>
+</body>
+
+</html>
